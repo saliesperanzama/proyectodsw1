@@ -50,14 +50,6 @@ export class RegisterPageComponent {
       this.password2 = '';
       return;
     }
-    
-    
-
-    // //Verificar que todos los campos esten completos
-    // if(this.userName == '' || this.noControl == 0 || this.email == '' || this.password == ''){
-    //   alert('Rellene todos los campos');
-    //   return;
-    // }
 
     //Verificar que el email y noControl esten en student
     this.apiProv.getStudents().then((res) => {
@@ -70,7 +62,10 @@ export class RegisterPageComponent {
 
       //Verificar que todos los campos esten completos
       if(this.noControl == 0 || this.email == '' || this.password == '' || this.password2 == ''){
-        alert('Rellene todos los campos');
+        Swal.fire({
+          title: "Complete todos los campos",
+          icon: "error"
+        });
         return;
       }
 
@@ -83,7 +78,10 @@ export class RegisterPageComponent {
           const noControlExiste = this.users.find((user: any) => user.noControl == this.noControl);
 
           if(noControlExiste){
-            alert('El usuario ya se encuentra registrado, inicie sesión.');
+            Swal.fire({
+              title: "El usuario ya se encuentra registrado, inicie sesión",
+              icon: "error"
+            });
             this.userName = '';
             this.noControl = 0;
             this.email = '';
@@ -102,7 +100,10 @@ export class RegisterPageComponent {
             }
             this.apiProv.register(data).then((res) => {
               if(res) {
-                alert('Usuario creado, inicie sesión.');
+                Swal.fire({
+                  title: "Usuario creado, inicie sesión",
+                  icon: "success"
+                });
                 this.userName = '';
                 this.noControl = 0;
                 this.email = '';
@@ -115,12 +116,15 @@ export class RegisterPageComponent {
           }
         })
       }else{
-        alert('No se encuentra registrado como estudiante \n Verifique que el correo y el número de control sean correctos');
+        Swal.fire({
+          title: "No se encuentra registrado como estudiante \n Verifique que el correo y el número de control sean correctos",
+          icon: "error"
+        });
         this.userName = '';
-            this.noControl = 0;
-            this.email = '';
-            this.password = '';
-            this.password2 = '';
+        this.noControl = 0;
+        this.email = '';
+        this.password = '';
+        this.password2 = '';
       }
     });
   }

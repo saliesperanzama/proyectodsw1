@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiProvider } from '../providers/api.prov';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -37,7 +37,10 @@ export class LoginPageComponent {
 
   public login() {
     if(this.email == '' || this.password == ''){
-      alert('Rellene todos los campos');
+      Swal.fire({
+        title: "Rellene todos los campos",
+        icon: "error"
+      });
       return;
     }
     const data = {

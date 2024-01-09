@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../environments/environment';
-
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root',
 })
@@ -18,7 +18,10 @@ export class ApiProvider {
         })
         .catch((err) => {
           console.log(err);
-          alert('Credenciales incorrectas\nRevise su correo y contraseña.');
+          Swal.fire({
+            title: "Credenciales incorrectas.\nRevise su correo y contraseña.",
+            icon: "error"
+          });
         });
     });
   }

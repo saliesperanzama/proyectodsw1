@@ -1,0 +1,29 @@
+<section class="flex flex-col items-center justify-center">
+    <div class="p-8 space-y-4">
+        <h1 class="text-xl font-bold text-blanco">
+            {{new ? 'Nuevo Estudiante' : 'Actualizar Estudiante'}}
+        </h1>
+        <div class="flex flex-col items-center justify-center">
+            <input type="number" class="w-auto border border-gray-300 rounded-md p-2" maxlength="8" [(ngModel)]="noControl" placeholder="Número de Control:"><br>
+            <input class="w-auto border border-gray-300 rounded-md p-2" [(ngModel)]="email" placeholder="Correo Institucional:"><br>
+       
+            <div class="text-center flex flex-row items-center justify-center">
+                @if (new) {
+                    <button (click)="createStudent()" class="bg-naranjam text-blanco text-base py-2 px-3 rounded-md hover:bg-naranja mr-3">
+                        Guardar
+                    </button>
+                    <button (click)="onClose()" class="bg-naranjam text-blanco text-base py-2 px-3 rounded-md hover:bg-naranja">
+                        Cancelar
+                    </button>
+                } @else {
+                    <button (click)="updateStudent()" class="bg-naranjam text-blanco text-base py-2 px-3 rounded-md hover:bg-naranja mr-3">
+                        Actualizar
+                    </button>
+                    <button (click)="onClose()" class="bg-naranjam text-blanco text-base py-2 px-3 rounded-md hover:bg-naranja">
+                        Cancelar
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</section>
