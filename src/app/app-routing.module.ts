@@ -17,7 +17,6 @@ const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'login', component: LoginPageComponent },
     { path: 'register', component: RegisterPageComponent },
-    { path: 'books', component: BooksPageComponent },
     // { path: '**', redirectTo: 'login', pathMatch: 'full' } // redirect to `first-component`
     //Rutas del administrador
     { path: 'home-admin', component: HomeAdminComponent },

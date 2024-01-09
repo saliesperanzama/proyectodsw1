@@ -1,6 +1,6 @@
 import { Component, Renderer2, ElementRef} from '@angular/core';
 import { ApiProvider } from '../providers/api.prov';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
@@ -42,7 +42,10 @@ export class RegisterPageComponent {
   public register() {
     //Verificar que la contraseña sea igual
     if(this.password != this.password2){
-      alert('Las contraseñas no coinciden');
+      Swal.fire({
+        title: 'Las contraseñas no coinciden',
+        icon: 'error',
+      });
       this.password = '';
       this.password2 = '';
       return;

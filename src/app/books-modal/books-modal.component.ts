@@ -45,17 +45,6 @@ export class BooksModalComponent {
       stock: this.stock,
       img: this.img
     }
-    
-    this.apiProv.createBook(data)
-    .then((res) => {
-      if (res) {
-        Swal.fire({
-          title: 'Libro creado',
-          icon: 'success',
-        });
-        this.onClose();
-      }
-    });
   }
 
   public updateBook(): void {
@@ -68,14 +57,6 @@ export class BooksModalComponent {
       stock: this.stock,
       img: this.img,
     };
-
-    this.apiProv.updateBook(this.bookId, data).then((res) => {
-      Swal.fire({
-        title: 'Libro actualizado',
-        icon: 'success',
-      });
-      this.onClose();
-    });
   }
 
   onClose(): void {

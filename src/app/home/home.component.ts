@@ -25,7 +25,6 @@ export class HomeComponent {
           window.location.href = 'products-est';
         }
       });
-      // window.location.href = '/books';
     }
   }
 }

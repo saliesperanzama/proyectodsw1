@@ -20,9 +20,6 @@ export class BooksPageComponent {
   }
 
   public getBooks() {
-    this.apiProv.getBooks().then(res => {
-      this.books = res.data;
-    });
   }
 
   public logout() {
@@ -77,16 +74,6 @@ export class BooksPageComponent {
       cancelButtonText: `Cancelar`
     }).then((result) => {
       if (result.isConfirmed) {
-        this.apiProv.deleteBook(book._id)
-          .then(
-            (res) => {
-              Swal.fire({
-                title: "Libro Eliminado",
-                icon: "success"
-              });
-              this.getBooks();
-            }
-          );
       }
     });
   }

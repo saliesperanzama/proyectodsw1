@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksModalComponent } from './books-modal/books-modal.component';
@@ -16,8 +15,11 @@ import { ServicesAdminComponent } from './modules/admin/services-admin/services-
 import { StudentsAdminComponent } from './modules/admin/students-admin/students-admin.component';
 import { ProductsEstComponent } from './modules/est/products-est/products-est.component';
 import { ServicesEstComponent } from './modules/est/services-est/services-est.component';
+import { UsersAdminComponent } from './modules/admin/users-admin/users-admin.component';
+import { StudentModalComponent } from './modules/admin/student-modal/student-modal.component';
+import { UserModalComponent } from './modules/admin/user-modal/user-modal.component';
+import { PsModalComponent } from './modules/admin/ps-modal/ps-modal.component';
 import { AddPsComponent } from './modules/est/add-ps/add-ps.component';
-import { UsersAdminComponent } from './modules/admin/users-admin/users-admin.component'
 
 @NgModule({
   declarations: [
@@ -33,8 +35,11 @@ import { UsersAdminComponent } from './modules/admin/users-admin/users-admin.com
     StudentsAdminComponent,
     ProductsEstComponent,
     ServicesEstComponent,
-    AddPsComponent,
     UsersAdminComponent,
+    StudentModalComponent,
+    UserModalComponent,
+    PsModalComponent,
+    AddPsComponent
   ],
   imports: [
     BrowserModule,

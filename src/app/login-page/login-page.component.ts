@@ -10,6 +10,7 @@ export class LoginPageComponent {
   public email: string = '';
   public password: string = '';
   public users: any = [];
+  public students: any = [];
   public role: string = '';
   //Obtener email del localstorage
   public userEmail = localStorage.getItem('userEmail');
@@ -35,6 +36,10 @@ export class LoginPageComponent {
   }
 
   public login() {
+    if(this.email == '' || this.password == ''){
+      alert('Rellene todos los campos');
+      return;
+    }
     const data = {
       email: this.email,
       password: this.password,
